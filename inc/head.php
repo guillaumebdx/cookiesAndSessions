@@ -1,8 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
 <head>
-  <title>The Cookie Factory</title>
+    <title>The Cookie Factory</title><p>
+        <?php
+            if (empty($_SESSION["newsession"])) {
+                echo "Non connecté";
+            }
+            else {
+                $nom = $_SESSION["newsession"];
+                echo "Connecté en tant que " . $_SESSION["newsession"];
+                echo "<a href='logout.php'> - Se déconnecter</a>";
+            }
+
+
+
+
+        ?></p>
 </head>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -35,7 +50,7 @@
           <li><a href="#">Nuts</a></li>
           <li><a href="#">Gluten full</a></li>
           <li>
-            <a href="/cart.php" class="btn btn-warning navbar-btn">
+            <a href="cart.php" class="btn btn-warning navbar-btn">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
               Cart
             </a>
@@ -45,6 +60,9 @@
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello Wilder !</strong>
+    <strong>Hello <?php
+        $nom = isset($_SESSION["newsession"]) ? $_SESSION["newsession"] : NULL;
+        echo $nom;
+        ?></strong>
   </div>
 </header>
