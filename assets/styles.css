@@ -7,6 +7,11 @@ strong {
   font-family: 'Kaushan Script', cursive;
 }
 
+.imgCart{
+    height:20px;
+    width: auto;
+}
+
 .navbar-brand{
     padding: 5px 15px;
 }
@@ -29,6 +34,10 @@ strong {
 
 .cookies {
     margin-top:1em;
+}
+.cookies img {
+    width:250px;
+    height: auto;
 }
 
 section.cookies{

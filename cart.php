@@ -5,7 +5,16 @@ require 'inc/head.php';
     <div class="row">
         <?php
         if (isset($_COOKIE['Article'])) {
-        echo 'Article dans votre panier : '. $_COOKIE['Article'];
+
+           $articlesExploded = explode(",",$_COOKIE['Article']);
+           $nbArticles = count($articlesExploded);
+           echo "<p> " . $nbArticles . " " . 'Article(s) dans votre panier </p>';
+           foreach ($articlesExploded as $key=>$value)
+           {
+               echo "<img src='assets/img/product-$value.jpeg' alt='Votre article'> <br />";
+           }
+
+
         }
         else {
         echo 'Votre panier est vide';
@@ -13,5 +22,6 @@ require 'inc/head.php';
             ?>
         <a href="index.php"><p>Retour à l'accueil</p></a>
     </div>
-</section>
+   </section>
+
 <?php require 'inc/foot.php'; ?>
