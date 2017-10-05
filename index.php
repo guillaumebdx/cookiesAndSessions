@@ -1,6 +1,6 @@
 <?php
     require 'inc/head.php';
-    require 'inc/addToCart.php';
+require 'inc/addToCart.php';
     if (empty($_SESSION["newsession"])){
         header ('location: login.php');
     }
